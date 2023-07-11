@@ -18,6 +18,9 @@
 		7C69E0DD2A594D0A00D24A7D /* TableViewUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69E0DC2A594D0A00D24A7D /* TableViewUIKitUITestsLaunchTests.swift */; };
 		7C69E0EA2A5955B200D24A7D /* CustomDesignTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69E0E92A5955B200D24A7D /* CustomDesignTableViewController.swift */; };
 		7C69E0EC2A59588D00D24A7D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69E0EB2A59588D00D24A7D /* ContactTableViewCell.swift */; };
+		7C9CCBBE2A5DBCD100F1AECC /* MultiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CCBBD2A5DBCD100F1AECC /* MultiTableViewController.swift */; };
+		7C9CCBC02A5DBD2300F1AECC /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CCBBF2A5DBD2300F1AECC /* LabelTableViewCell.swift */; };
+		7C9CCBC22A5DBD4400F1AECC /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CCBC12A5DBD4400F1AECC /* DateTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		7C69E0DC2A594D0A00D24A7D /* TableViewUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7C69E0E92A5955B200D24A7D /* CustomDesignTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesignTableViewController.swift; sourceTree = "<group>"; };
 		7C69E0EB2A59588D00D24A7D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		7C9CCBBD2A5DBCD100F1AECC /* MultiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTableViewController.swift; sourceTree = "<group>"; };
+		7C9CCBBF2A5DBD2300F1AECC /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		7C9CCBC12A5DBD4400F1AECC /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				7C69E0C72A594D0900D24A7D /* Info.plist */,
 				7C69E0E92A5955B200D24A7D /* CustomDesignTableViewController.swift */,
 				7C69E0EB2A59588D00D24A7D /* ContactTableViewCell.swift */,
+				7C9CCBBD2A5DBCD100F1AECC /* MultiTableViewController.swift */,
+				7C9CCBBF2A5DBD2300F1AECC /* LabelTableViewCell.swift */,
+				7C9CCBC12A5DBD4400F1AECC /* DateTableViewCell.swift */,
 			);
 			path = TableViewUIKit;
 			sourceTree = "<group>";
@@ -267,6 +276,9 @@
 				7C69E0EA2A5955B200D24A7D /* CustomDesignTableViewController.swift in Sources */,
 				7C69E0EC2A59588D00D24A7D /* ContactTableViewCell.swift in Sources */,
 				7C69E0BE2A594D0800D24A7D /* ViewController.swift in Sources */,
+				7C9CCBC22A5DBD4400F1AECC /* DateTableViewCell.swift in Sources */,
+				7C9CCBBE2A5DBCD100F1AECC /* MultiTableViewController.swift in Sources */,
+				7C9CCBC02A5DBD2300F1AECC /* LabelTableViewCell.swift in Sources */,
 				7C69E0BA2A594D0800D24A7D /* AppDelegate.swift in Sources */,
 				7C69E0BC2A594D0800D24A7D /* SceneDelegate.swift in Sources */,
 			);

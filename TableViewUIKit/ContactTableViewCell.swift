@@ -69,7 +69,7 @@ class ContactTableViewCell: UITableViewCell {
             contactLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
 
             countryLabel.topAnchor.constraint(equalTo: contactLabel.topAnchor),
-            countryLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor , constant: -16),
+            countryLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
         ])
     }
@@ -79,11 +79,3 @@ class ContactTableViewCell: UITableViewCell {
     }
 }
 
-extension UIColor {
-    static var random: UIColor {
-        let red = CGFloat.random(in: 0.6...1)
-        let green = CGFloat.random(in: 0.6...1)
-        let blue = CGFloat.random(in: 0.6...1)
-        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-    }
-}
