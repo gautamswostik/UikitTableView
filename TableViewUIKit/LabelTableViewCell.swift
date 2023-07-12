@@ -13,7 +13,7 @@ class LabelTableViewCell: UITableViewCell {
     
     var item: String = .init() {
         didSet{
-            dateLabel.text = item
+            label.text = item
         }
     }
     
@@ -25,7 +25,7 @@ class LabelTableViewCell: UITableViewCell {
     func setUpViews(){
         
         imageAndText.addArrangedSubview(someRandomIcon)
-        imageAndText.addArrangedSubview(dateLabel)
+        imageAndText.addArrangedSubview(label)
         itemView.addArrangedSubview(imageAndText)
         itemView.addArrangedSubview(author)
         
@@ -65,7 +65,7 @@ class LabelTableViewCell: UITableViewCell {
         return cardView
     }()
     
-    lazy var dateLabel: UILabel = {
+    lazy var label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         return label

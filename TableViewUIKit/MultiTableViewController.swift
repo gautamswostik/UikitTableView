@@ -8,31 +8,14 @@
 import UIKit
 
 struct ListToRender {
-    var type: String?
-    var item: String?
+    var date: String?
+    var items: [String]?
 }
 
 var items : [ListToRender] = [
-    ListToRender(type: "DATE" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/2022"),
-    ListToRender(type: "DATE" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/022/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/202222/02/20222/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "DATE" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
-    ListToRender(type: "LABEL" ,item: "22/02/2022"),
+    ListToRender(date: "22/02/2022" ,items: ["ABC","ITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEMITEM","BBC"]),
+    ListToRender(date: "22/01/2022" ,items: ["ABC","BBC","CBC"]),
 ]
-
-
-
-import UIKit
 
 class MultiTableViewController: UIViewController {
     
@@ -60,30 +43,34 @@ class MultiTableViewController: UIViewController {
     }
 }
 
+
 extension MultiTableViewController: UITableViewDataSource , UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items[section].items?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        let lbl = UILabel(frame: CGRect(x: 15, y: -20, width: view.frame.width - 15, height: 40))
+        lbl.font = UIFont.systemFont(ofSize: 28)
+        lbl.text = items[section].date
+        view.addSubview(lbl)
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch items[indexPath.row].type {
-        case "DATE":
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DateTableViewCell.dateIdentifier, for: indexPath) as? DateTableViewCell else {return UITableViewCell()}
-            cell.date = items[indexPath.row].item  ?? ""
-            return cell
-        case "LABEL":
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: LabelTableViewCell.identifier, for: indexPath) as? LabelTableViewCell else {return UITableViewCell()}
-            cell.item = items[indexPath.row].item  ?? ""
-            return cell
-        default:
-            return UITableViewCell()
-        }
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LabelTableViewCell.identifier, for: indexPath) as? LabelTableViewCell else {return UITableViewCell()}
+        cell.item = items[indexPath.section].items?[indexPath.row] ?? ""
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(items[indexPath.row])
+        print(items[indexPath.section])
     }
     
 }
